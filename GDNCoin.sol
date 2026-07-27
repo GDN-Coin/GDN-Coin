@@ -8,20 +8,55 @@ import "@openzeppelin/contracts@5.0.2/token/ERC20/extensions/ERC20Pausable.sol";
 import "@openzeppelin/contracts@5.0.2/access/Ownable.sol";
 import "@openzeppelin/contracts@5.0.2/access/Ownable2Step.sol";
 
+/**
+ * @title GDN Coin
+ * @author GDN Ecosystem
+ * @notice Fixed-supply ERC-20 token for the GDN Ecosystem.
+ * @dev
+ * - Total supply is created once during deployment.
+ * - 95% is allocated to the treasury wallet.
+ * - 5% is allocated to the charity reserve wallet.
+ * - No transfer tax is applied.
+ * - No additional minting function exists.
+ * - Token transfers may be paused by the owner in an emergency.
+ */
 contract GDNCoin is
     ERC20,
     ERC20Burnable,
     ERC20Pausable,
     Ownable2Step
 {
+    /// @notice Reverts when a required wallet is the zero address.
+    error ZeroAddress();
+
+    /// @notice Reverts when treasury and charity wallets are identical.
+    error IdenticalWalletAddresses();
+
+    /// @notice Total fixed supply of GDN, including 18 decimal places.
     uint256 public constant TOTAL_SUPPLY =
         1_000_000_000 * 10 ** 18;
 
-    uint256 public constant CHARITY_PERCENTAGE = 5;
+    /// @notice Treasury allocation: 95% of the total supply.
+    uint256 public constant TREASURY_SUPPLY =
+        950_000_000 * 10 ** 18;
 
+    /// @notice Charity reserve allocation: 5% of the total supply.
+    uint256 public constant CHARITY_SUPPLY =
+        50_000_000 * 10 ** 18;
+
+    /// @notice Wallet receiving the treasury allocation.
     address public immutable treasuryWallet;
+
+    /// @notice Wallet receiving the charity reserve allocation.
     address public immutable charityReserveWallet;
 
+    /**
+     * @notice Emitted when the initial fixed supply is distributed.
+     * @param treasuryWallet Address receiving the treasury allocation.
+     * @param treasuryAmount Amount allocated to the treasury.
+     * @param charityReserveWallet Address receiving the charity allocation.
+     * @param charityAmount Amount allocated to the charity reserve.
+     */
     event InitialDistribution(
         address indexed treasuryWallet,
         uint256 treasuryAmount,
@@ -29,59 +64,62 @@ contract GDNCoin is
         uint256 charityAmount
     );
 
+    /**
+     * @notice Creates GDN Coin and distributes the entire fixed supply.
+     * @param treasuryWallet_ Address receiving 950,000,000 GDN.
+     * @param charityReserveWallet_ Address receiving 50,000,000 GDN.
+     */
     constructor(
-        address _treasuryWallet,
-        address _charityReserveWallet
+        address treasuryWallet_,
+        address charityReserveWallet_
     )
         ERC20("GDN Coin", "GDN")
         Ownable(msg.sender)
     {
-        require(
-            _treasuryWallet != address(0),
-            "Treasury wallet cannot be zero address"
-        );
+        if (
+            treasuryWallet_ == address(0) ||
+            charityReserveWallet_ == address(0)
+        ) {
+            revert ZeroAddress();
+        }
 
-        require(
-            _charityReserveWallet != address(0),
-            "Charity wallet cannot be zero address"
-        );
+        if (treasuryWallet_ == charityReserveWallet_) {
+            revert IdenticalWalletAddresses();
+        }
 
-        require(
-            _treasuryWallet != _charityReserveWallet,
-            "Wallet addresses must be different"
-        );
+        treasuryWallet = treasuryWallet_;
+        charityReserveWallet = charityReserveWallet_;
 
-        treasuryWallet = _treasuryWallet;
-        charityReserveWallet = _charityReserveWallet;
-
-        uint256 charityAmount =
-            (TOTAL_SUPPLY * CHARITY_PERCENTAGE) / 100;
-
-        uint256 treasuryAmount =
-            TOTAL_SUPPLY - charityAmount;
-
-        _mint(_treasuryWallet, treasuryAmount);
-        _mint(_charityReserveWallet, charityAmount);
+        _mint(treasuryWallet_, TREASURY_SUPPLY);
+        _mint(charityReserveWallet_, CHARITY_SUPPLY);
 
         emit InitialDistribution(
-            _treasuryWallet,
-            treasuryAmount,
-            _charityReserveWallet,
-            charityAmount
+            treasuryWallet_,
+            TREASURY_SUPPLY,
+            charityReserveWallet_,
+            CHARITY_SUPPLY
         );
     }
 
-    // Only the owner can pause token transfers in an emergency.
-    function pause() public onlyOwner {
+    /**
+     * @notice Pauses transfers, minting and burning.
+     * @dev Can only be called by the current owner.
+     */
+    function pause() external onlyOwner {
         _pause();
     }
 
-    // Only the owner can restart token transfers.
-    function unpause() public onlyOwner {
+    /**
+     * @notice Restarts token transfers and burning.
+     * @dev Can only be called by the current owner.
+     */
+    function unpause() external onlyOwner {
         _unpause();
     }
 
-    // Required by ERC20Pausable.
+    /**
+     * @dev Applies the ERC20Pausable transfer restrictions.
+     */
     function _update(
         address from,
         address to,
