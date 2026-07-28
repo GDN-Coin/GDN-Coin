@@ -3,231 +3,157 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#080808" />
   <meta name="description" content="GDN Coin — Transparent Finance. Real Utility. Social Impact." />
+  <meta property="og:title" content="GDN Coin | GDN Ecosystem" />
+  <meta property="og:description" content="A fixed-supply ERC-20 token built around transparency, security and measurable social impact." />
   <title>GDN Coin | GDN Ecosystem</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="noise"></div>
+  <div class="page-noise" aria-hidden="true"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="progress-bar" id="progressBar" aria-hidden="true"></div>
 
   <header class="site-header">
     <a class="brand" href="#home" aria-label="GDN Coin home">
       <span class="brand-mark">G</span>
       <span>GDN <strong>COIN</strong></span>
     </a>
-
-    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
-
-    <nav class="nav">
-      <a href="#about">About</a>
-      <a href="#tokenomics">Tokenomics</a>
-      <a href="#security">Security</a>
-      <a href="#roadmap">Roadmap</a>
-      <a href="#links">Links</a>
+    <nav class="nav" id="mainNav" aria-label="Primary navigation">
+      <a href="#about" data-en="About" data-tr="Hakkında">About</a>
+      <a href="#principles" data-en="Principles" data-tr="İlkeler">Principles</a>
+      <a href="#tokenomics" data-en="Tokenomics" data-tr="Token Ekonomisi">Tokenomics</a>
+      <a href="#security" data-en="Security" data-tr="Güvenlik">Security</a>
+      <a href="#roadmap" data-en="Roadmap" data-tr="Yol Haritası">Roadmap</a>
     </nav>
-
-    <a class="button button-small button-outline" href="#links">Explore GDN</a>
+    <div class="header-actions">
+      <button class="language-switch" id="languageSwitch" aria-label="Change language">TR</button>
+      <a class="button button-small button-outline" href="#resources" data-en="Explore GDN" data-tr="GDN'yi Keşfet">Explore GDN</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
   </header>
 
   <main>
     <section id="home" class="hero section">
-      <div class="hero-copy">
-        <div class="eyebrow">ETHEREUM ERC-20 • SEPOLIA VERIFIED</div>
-        <h1>Transparent finance.<br><span>Real utility.</span><br>Social impact.</h1>
-        <p>
-          GDN Coin is a fixed-supply ERC-20 token designed for a transparent,
-          secure and socially responsible blockchain ecosystem.
-        </p>
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-copy reveal">
+        <div class="eyebrow" data-en="ETHEREUM ERC-20 • SEPOLIA VERIFIED" data-tr="ETHEREUM ERC-20 • SEPOLIA DOĞRULANDI">ETHEREUM ERC-20 • SEPOLIA VERIFIED</div>
+        <h1>
+          <span data-en="Transparent finance." data-tr="Şeffaf finans.">Transparent finance.</span><br>
+          <em data-en="Real utility." data-tr="Gerçek fayda.">Real utility.</em><br>
+          <span data-en="Social impact." data-tr="Sosyal etki.">Social impact.</span>
+        </h1>
+        <p data-en="GDN Coin is a fixed-supply ERC-20 token designed for a transparent, secure and socially responsible blockchain ecosystem."
+           data-tr="GDN Coin; şeffaf, güvenli ve sosyal sorumluluğu önemseyen bir blockchain ekosistemi için tasarlanmış sabit arzlı bir ERC-20 tokendir.">GDN Coin is a fixed-supply ERC-20 token designed for a transparent, secure and socially responsible blockchain ecosystem.</p>
         <div class="hero-actions">
-          <a class="button" href="#tokenomics">View Tokenomics</a>
-          <a class="button button-ghost" href="#links">Official Links</a>
+          <a class="button" href="#tokenomics" data-en="View Tokenomics" data-tr="Token Ekonomisini Gör">View Tokenomics</a>
+          <a class="button button-ghost" href="GDN_Coin_Whitepaper_v1.0_Beta.pdf" target="_blank" data-en="Read Whitepaper" data-tr="Whitepaper'ı Oku">Read Whitepaper</a>
         </div>
         <div class="contract-box">
-          <span>Sepolia Contract</span>
-          <code id="contractAddress">0xe898363d5e8d9d60eca40a468956bdd3b52f4fa6</code>
-          <button id="copyContract" aria-label="Copy contract address">Copy</button>
+          <div><span data-en="Sepolia Contract" data-tr="Sepolia Sözleşmesi">Sepolia Contract</span><code id="contractAddress">0xe898363d5e8d9d60eca40a468956bdd3b52f4fa6</code></div>
+          <button id="copyContract" data-en="Copy" data-tr="Kopyala">Copy</button>
         </div>
       </div>
 
-      <div class="hero-visual" aria-hidden="true">
-        <div class="coin-ring ring-one"></div>
-        <div class="coin-ring ring-two"></div>
-        <div class="coin">
-          <span class="coin-letter">G</span>
-          <span class="coin-label">GDN</span>
-        </div>
-        <div class="orbit orbit-one"><i></i></div>
-        <div class="orbit orbit-two"><i></i></div>
+      <div class="hero-visual reveal delay-1" aria-label="Animated GDN Coin">
+        <div class="halo halo-one"></div><div class="halo halo-two"></div>
+        <div class="orbit orbit-a"><i></i></div><div class="orbit orbit-b"><i></i></div>
+        <div class="coin-3d"><div class="coin-face"><span class="coin-g">G</span><span class="coin-name">GDN</span></div></div>
+        <div class="verified-chip"><span>✓</span><div><small data-en="Contract Status" data-tr="Sözleşme Durumu">Contract Status</small><strong data-en="Verified on Sepolia" data-tr="Sepolia'da Doğrulandı">Verified on Sepolia</strong></div></div>
       </div>
     </section>
 
-    <section class="stats">
-      <article><strong>1B</strong><span>Total Supply</span></article>
-      <article><strong>95%</strong><span>Treasury</span></article>
-      <article><strong>5%</strong><span>Charity Reserve</span></article>
-      <article><strong>0%</strong><span>Transfer Tax</span></article>
+    <section class="stats reveal">
+      <article><strong data-count="1000000000" data-format="compact">0</strong><span data-en="Total Supply" data-tr="Toplam Arz">Total Supply</span></article>
+      <article><strong data-count="95" data-suffix="%">0</strong><span data-en="Treasury" data-tr="Hazine">Treasury</span></article>
+      <article><strong data-count="5" data-suffix="%">0</strong><span data-en="Charity Reserve" data-tr="Yardım Rezervi">Charity Reserve</span></article>
+      <article><strong data-count="0" data-suffix="%">0</strong><span data-en="Transfer Tax" data-tr="Transfer Vergisi">Transfer Tax</span></article>
     </section>
 
     <section id="about" class="section split-section">
-      <div>
-        <div class="eyebrow">ABOUT GDN</div>
-        <h2>Built on clarity, not complexity.</h2>
+      <div class="reveal"><div class="eyebrow" data-en="ABOUT GDN" data-tr="GDN HAKKINDA">ABOUT GDN</div><h2 data-en="Built on clarity, not complexity." data-tr="Karmaşıklık değil, açıklık üzerine kuruldu.">Built on clarity, not complexity.</h2></div>
+      <div class="large-copy reveal delay-1">
+        <p data-en="GDN Coin was created around a simple principle: blockchain technology should be transparent, useful and capable of supporting measurable positive impact." data-tr="GDN Coin basit bir ilke üzerine kuruldu: Blockchain teknolojisi şeffaf, faydalı ve ölçülebilir olumlu etkiyi destekleyebilen bir yapıda olmalıdır.">GDN Coin was created around a simple principle: blockchain technology should be transparent, useful and capable of supporting measurable positive impact.</p>
+        <p data-en="The complete supply was created once at deployment. No public minting function exists, no transfer tax is applied and the initial allocation is publicly verifiable on-chain." data-tr="Tüm arz dağıtım sırasında tek seferde oluşturuldu. Herkese açık yeni token üretme fonksiyonu yoktur, transfer vergisi uygulanmaz ve ilk dağılım zincir üzerinde doğrulanabilir.">The complete supply was created once at deployment. No public minting function exists, no transfer tax is applied and the initial allocation is publicly verifiable on-chain.</p>
       </div>
-      <div class="large-copy">
-        <p>
-          GDN Coin was created around a simple principle: blockchain technology
-          should be transparent, useful and capable of supporting measurable
-          positive impact.
-        </p>
-        <p>
-          The complete supply was created once at deployment. No public minting
-          function exists, no transfer tax is applied and the initial allocation
-          is publicly verifiable on-chain.
-        </p>
+    </section>
+
+    <section class="section mission-vision">
+      <article class="statement-card reveal"><span>01</span><div class="eyebrow" data-en="MISSION" data-tr="MİSYON">MISSION</div><h2 data-en="Build an open, secure and transparent blockchain ecosystem." data-tr="Açık, güvenli ve şeffaf bir blockchain ekosistemi oluşturmak.">Build an open, secure and transparent blockchain ecosystem.</h2></article>
+      <article class="statement-card reveal delay-1"><span>02</span><div class="eyebrow" data-en="VISION" data-tr="VİZYON">VISION</div><h2 data-en="Support practical utility with measurable social impact." data-tr="Ölçülebilir sosyal etkiyle gerçek kullanım alanlarını desteklemek.">Support practical utility with measurable social impact.</h2></article>
+    </section>
+
+    <section id="principles" class="section">
+      <div class="section-heading reveal"><div class="eyebrow" data-en="CORE PRINCIPLES" data-tr="TEMEL İLKELER">CORE PRINCIPLES</div><h2 data-en="The standards behind every decision." data-tr="Her kararın arkasındaki standartlar.">The standards behind every decision.</h2></div>
+      <div class="principles-grid">
+        <article class="principle-card reveal"><b>01</b><h3 data-en="Transparency" data-tr="Şeffaflık">Transparency</h3><p data-en="Clear communication, verifiable data and open development." data-tr="Açık iletişim, doğrulanabilir veriler ve şeffaf geliştirme.">Clear communication, verifiable data and open development.</p></article>
+        <article class="principle-card reveal delay-1"><b>02</b><h3 data-en="Security" data-tr="Güvenlik">Security</h3><p data-en="Responsible design, proven libraries and careful ownership controls." data-tr="Sorumlu tasarım, kanıtlanmış kütüphaneler ve dikkatli sahiplik kontrolleri.">Responsible design, proven libraries and careful ownership controls.</p></article>
+        <article class="principle-card reveal"><b>03</b><h3 data-en="Real Utility" data-tr="Gerçek Fayda">Real Utility</h3><p data-en="Features should solve real problems and serve a clear purpose." data-tr="Özellikler gerçek sorunları çözmeli ve açık bir amaca hizmet etmelidir.">Features should solve real problems and serve a clear purpose.</p></article>
+        <article class="principle-card reveal delay-1"><b>04</b><h3 data-en="Community" data-tr="Topluluk">Community</h3><p data-en="Long-term progress is built through participation and collaboration." data-tr="Uzun vadeli ilerleme, katılım ve iş birliğiyle oluşturulur.">Long-term progress is built through participation and collaboration.</p></article>
+        <article class="principle-card reveal"><b>05</b><h3 data-en="Sustainability" data-tr="Sürdürülebilirlik">Sustainability</h3><p data-en="Responsible growth matters more than short-term attention." data-tr="Sorumlu büyüme, kısa vadeli ilgiden daha önemlidir.">Responsible growth matters more than short-term attention.</p></article>
+        <article class="principle-card reveal delay-1"><b>06</b><h3 data-en="Innovation" data-tr="Yenilikçilik">Innovation</h3><p data-en="Continuous improvement guided by technology and constructive feedback." data-tr="Teknoloji ve yapıcı geri bildirimle yönlendirilen sürekli gelişim.">Continuous improvement guided by technology and constructive feedback.</p></article>
       </div>
     </section>
 
     <section id="tokenomics" class="section">
-      <div class="section-heading">
-        <div class="eyebrow">TOKENOMICS</div>
-        <h2>A predictable fixed-supply model.</h2>
-        <p>Simple allocation. No hidden deductions. No inflationary minting.</p>
-      </div>
-
+      <div class="section-heading reveal"><div class="eyebrow">TOKENOMICS</div><h2 data-en="A predictable fixed-supply model." data-tr="Öngörülebilir sabit arz modeli.">A predictable fixed-supply model.</h2><p data-en="Simple allocation. No hidden deductions. No inflationary minting." data-tr="Basit dağılım. Gizli kesinti yok. Enflasyonist token üretimi yok.">Simple allocation. No hidden deductions. No inflationary minting.</p></div>
       <div class="tokenomics-grid">
-        <div class="allocation-card">
-          <div class="donut" role="img" aria-label="95 percent treasury, 5 percent charity reserve">
-            <div class="donut-center">
-              <strong>1B</strong>
-              <span>GDN</span>
-            </div>
-          </div>
-          <div class="legend">
-            <div><i class="legend-treasury"></i><span>Treasury</span><strong>950M GDN</strong></div>
-            <div><i class="legend-charity"></i><span>Charity Reserve</span><strong>50M GDN</strong></div>
-          </div>
-        </div>
-
+        <div class="allocation-card reveal"><div class="donut"><div class="donut-center"><strong>1B</strong><span>GDN</span></div></div><div class="legend"><div><i class="legend-treasury"></i><span data-en="Treasury" data-tr="Hazine">Treasury</span><strong>950M GDN</strong></div><div><i class="legend-charity"></i><span data-en="Charity Reserve" data-tr="Yardım Rezervi">Charity Reserve</span><strong>50M GDN</strong></div></div></div>
         <div class="feature-grid">
-          <article class="feature-card">
-            <span>01</span>
-            <h3>Fixed Supply</h3>
-            <p>The total supply is permanently capped at 1,000,000,000 GDN.</p>
-          </article>
-          <article class="feature-card">
-            <span>02</span>
-            <h3>No Transfer Tax</h3>
-            <p>Sending 100 GDN delivers exactly 100 GDN to the receiver.</p>
-          </article>
-          <article class="feature-card">
-            <span>03</span>
-            <h3>Burnable</h3>
-            <p>Holders may voluntarily and permanently burn their own tokens.</p>
-          </article>
-          <article class="feature-card">
-            <span>04</span>
-            <h3>Emergency Pause</h3>
-            <p>Transfers can be paused by the owner during exceptional incidents.</p>
-          </article>
+          <article class="feature-card reveal"><span>01</span><h3 data-en="Fixed Supply" data-tr="Sabit Arz">Fixed Supply</h3><p data-en="The total supply is permanently capped at 1,000,000,000 GDN." data-tr="Toplam arz kalıcı olarak 1.000.000.000 GDN ile sınırlandırılmıştır.">The total supply is permanently capped at 1,000,000,000 GDN.</p></article>
+          <article class="feature-card reveal delay-1"><span>02</span><h3 data-en="No Transfer Tax" data-tr="Transfer Vergisi Yok">No Transfer Tax</h3><p data-en="Sending 100 GDN delivers exactly 100 GDN to the receiver." data-tr="100 GDN gönderildiğinde alıcıya tam olarak 100 GDN ulaşır.">Sending 100 GDN delivers exactly 100 GDN to the receiver.</p></article>
+          <article class="feature-card reveal"><span>03</span><h3 data-en="Burnable" data-tr="Yakılabilir">Burnable</h3><p data-en="Holders may voluntarily and permanently burn their own tokens." data-tr="Token sahipleri kendi tokenlerini gönüllü ve kalıcı olarak yakabilir.">Holders may voluntarily and permanently burn their own tokens.</p></article>
+          <article class="feature-card reveal delay-1"><span>04</span><h3 data-en="Emergency Pause" data-tr="Acil Duraklatma">Emergency Pause</h3><p data-en="Transfers can be paused by the owner during exceptional incidents." data-tr="Olağanüstü durumlarda transferler sözleşme sahibi tarafından geçici olarak durdurulabilir.">Transfers can be paused by the owner during exceptional incidents.</p></article>
         </div>
       </div>
     </section>
 
     <section id="security" class="section security-section">
-      <div class="section-heading">
-        <div class="eyebrow">SECURITY</div>
-        <h2>Conservative smart-contract design.</h2>
+      <div class="section-heading reveal"><div class="eyebrow" data-en="SMART CONTRACT" data-tr="AKILLI SÖZLEŞME">SMART CONTRACT</div><h2 data-en="Conservative architecture. Publicly verifiable." data-tr="Temkinli mimari. Herkese açık doğrulama.">Conservative architecture. Publicly verifiable.</h2></div>
+      <div class="architecture-grid">
+        <article class="architecture-card reveal"><span>ERC20</span><h3 data-en="Standard Token Core" data-tr="Standart Token Çekirdeği">Standard Token Core</h3></article>
+        <article class="architecture-card reveal delay-1"><span>BURN</span><h3>ERC20Burnable</h3></article>
+        <article class="architecture-card reveal"><span>PAUSE</span><h3>ERC20Pausable</h3></article>
+        <article class="architecture-card reveal delay-1"><span>2-STEP</span><h3>Ownable2Step</h3></article>
+        <article class="architecture-card reveal"><span>FIXED</span><h3 data-en="No Public Mint" data-tr="Herkese Açık Mint Yok">No Public Mint</h3></article>
+        <article class="architecture-card reveal delay-1"><span>OZ 5.0.2</span><h3>OpenZeppelin</h3></article>
       </div>
-      <div class="security-grid">
-        <article>
-          <div class="icon">✓</div>
-          <h3>Open Source</h3>
-          <p>The contract source code is publicly available in the official GitHub repository.</p>
-        </article>
-        <article>
-          <div class="icon">✓</div>
-          <h3>Exact-Match Verification</h3>
-          <p>The Sepolia deployment has been source-code verified on Etherscan.</p>
-        </article>
-        <article>
-          <div class="icon">✓</div>
-          <h3>OpenZeppelin 5.0.2</h3>
-          <p>Core ERC-20, pausable, burnable and ownership components use established libraries.</p>
-        </article>
-        <article>
-          <div class="icon">✓</div>
-          <h3>Two-Step Ownership</h3>
-          <p>Ownable2Step reduces the risk of transferring control to an incorrect address.</p>
-        </article>
-      </div>
+      <div class="security-note reveal"><strong data-en="Current status:" data-tr="Mevcut durum:">Current status:</strong><span data-en="The verified deployment is on Ethereum Sepolia testnet. Mainnet launch has not occurred." data-tr="Doğrulanmış dağıtım Ethereum Sepolia test ağındadır. Mainnet lansmanı henüz gerçekleşmemiştir.">The verified deployment is on Ethereum Sepolia testnet. Mainnet launch has not occurred.</span></div>
     </section>
 
     <section id="roadmap" class="section">
-      <div class="section-heading">
-        <div class="eyebrow">ROADMAP</div>
-        <h2>From verified testnet to real-world ecosystem.</h2>
-      </div>
-      <div class="timeline">
-        <article class="complete">
-          <span>Phase 01</span>
-          <h3>Foundation</h3>
-          <p>Smart contract, GitHub repository, Sepolia deployment, verification and wallet testing.</p>
-        </article>
-        <article class="active">
-          <span>Phase 02</span>
-          <h3>Brand & Community</h3>
-          <p>Website, whitepaper, visual identity and early community development.</p>
-        </article>
-        <article>
-          <span>Phase 03</span>
-          <h3>Mainnet Preparation</h3>
-          <p>Security review, multisig transition, liquidity planning and launch readiness.</p>
-        </article>
-        <article>
-          <span>Phase 04</span>
-          <h3>Ecosystem Growth</h3>
-          <p>Payments, business partnerships and transparent social-impact initiatives.</p>
-        </article>
+      <div class="section-heading reveal"><div class="eyebrow" data-en="ROADMAP" data-tr="YOL HARİTASI">ROADMAP</div><h2 data-en="From verified testnet to a responsible ecosystem." data-tr="Doğrulanmış test ağından sorumlu bir ekosisteme.">From verified testnet to a responsible ecosystem.</h2></div>
+      <div class="roadmap-cards">
+        <article class="roadmap-card complete reveal"><span>01 / COMPLETE</span><h3 data-en="Foundation" data-tr="Temel">Foundation</h3><p data-en="Smart contract, GitHub repository, Sepolia deployment, verification and wallet testing." data-tr="Akıllı sözleşme, GitHub deposu, Sepolia dağıtımı, doğrulama ve cüzdan testleri.">Smart contract, GitHub repository, Sepolia deployment, verification and wallet testing.</p></article>
+        <article class="roadmap-card active reveal delay-1"><span>02 / ACTIVE</span><h3 data-en="Brand & Community" data-tr="Marka ve Topluluk">Brand & Community</h3><p data-en="Website, whitepaper, visual identity and early community development." data-tr="Web sitesi, whitepaper, görsel kimlik ve ilk topluluk geliştirme adımları.">Website, whitepaper, visual identity and early community development.</p></article>
+        <article class="roadmap-card reveal"><span>03 / PLANNED</span><h3 data-en="Mainnet Preparation" data-tr="Mainnet Hazırlığı">Mainnet Preparation</h3><p data-en="Security review, multisig transition, liquidity planning and launch readiness." data-tr="Güvenlik incelemesi, çoklu imza geçişi, likidite planlaması ve lansman hazırlığı.">Security review, multisig transition, liquidity planning and launch readiness.</p></article>
+        <article class="roadmap-card reveal delay-1"><span>04 / FUTURE</span><h3 data-en="Ecosystem Growth" data-tr="Ekosistem Büyümesi">Ecosystem Growth</h3><p data-en="Payments, business partnerships and transparent social-impact initiatives." data-tr="Ödemeler, iş ortaklıkları ve şeffaf sosyal etki girişimleri.">Payments, business partnerships and transparent social-impact initiatives.</p></article>
       </div>
     </section>
 
-    <section id="links" class="section link-section">
-      <div>
-        <div class="eyebrow">OFFICIAL RESOURCES</div>
-        <h2>Verify. Explore. Follow the build.</h2>
-      </div>
-      <div class="link-grid">
-        <a href="https://github.com/GDN-Coin/GDN-Coin" target="_blank" rel="noreferrer">
-          <span>GitHub</span><strong>Source Code ↗</strong>
-        </a>
-        <a href="https://sepolia.etherscan.io/address/0xe898363d5e8d9d60eca40a468956bdd3b52f4fa6" target="_blank" rel="noreferrer">
-          <span>Sepolia Etherscan</span><strong>Verified Contract ↗</strong>
-        </a>
-        <a href="GDN_Coin_Whitepaper_v1.0_Beta.pdf" target="_blank">
-          <span>Whitepaper</span><strong>Read PDF ↗</strong>
-        </a>
+    <section id="resources" class="section resources-section">
+      <div class="resource-copy reveal"><div class="eyebrow" data-en="OFFICIAL RESOURCES" data-tr="RESMÎ KAYNAKLAR">OFFICIAL RESOURCES</div><h2 data-en="Verify everything. Follow the build." data-tr="Her şeyi doğrula. Gelişimi takip et.">Verify everything. Follow the build.</h2><p data-en="Official source code, contract verification and project documentation are available through the links below." data-tr="Resmî kaynak kod, sözleşme doğrulaması ve proje dokümantasyonu aşağıdaki bağlantılarda yer alır.">Official source code, contract verification and project documentation are available through the links below.</p></div>
+      <div class="whitepaper-card reveal delay-1"><div class="paper-preview"><span>GDN</span><small>WHITEPAPER</small><b>v1.0 BETA</b></div><div><h3 data-en="GDN Coin Whitepaper" data-tr="GDN Coin Whitepaper">GDN Coin Whitepaper</h3><p data-en="Mission, tokenomics, contract architecture, roadmap and risk disclosure." data-tr="Misyon, token ekonomisi, sözleşme mimarisi, yol haritası ve risk bildirimi.">Mission, tokenomics, contract architecture, roadmap and risk disclosure.</p><a class="button" href="GDN_Coin_Whitepaper_v1.0_Beta.pdf" target="_blank" data-en="Open PDF" data-tr="PDF'yi Aç">Open PDF</a></div></div>
+      <div class="link-grid reveal">
+        <a href="https://github.com/GDN-Coin/GDN-Coin" target="_blank" rel="noreferrer"><span>GitHub</span><strong data-en="Source Code ↗" data-tr="Kaynak Kod ↗">Source Code ↗</strong></a>
+        <a href="https://sepolia.etherscan.io/address/0xe898363d5e8d9d60eca40A468956BDd3b52F4FA6" target="_blank" rel="noreferrer"><span>Sepolia Etherscan</span><strong data-en="Verified Contract ↗" data-tr="Doğrulanmış Sözleşme ↗">Verified Contract ↗</strong></a>
       </div>
     </section>
 
-    <section class="disclaimer section">
-      <h2>Important notice</h2>
-      <p>
-        GDN Coin is currently in public testnet development. Roadmap items are plans,
-        not guarantees. Digital assets involve technical, market and regulatory risk.
-        Always conduct independent research.
-      </p>
-    </section>
+    <section class="cta-section section reveal"><div><div class="eyebrow" data-en="MORE THAN A TOKEN. A MOVEMENT." data-tr="BİR TOKENDEN FAZLASI. BİR HAREKET.">MORE THAN A TOKEN. A MOVEMENT.</div><h2 data-en="Designed for trust. Built for the future." data-tr="Güven için tasarlandı. Gelecek için inşa edildi.">Designed for trust. Built for the future.</h2></div><a class="button" href="https://github.com/GDN-Coin/GDN-Coin" target="_blank" rel="noreferrer" data-en="Follow Development" data-tr="Gelişimi Takip Et">Follow Development</a></section>
+
+    <section class="disclaimer section"><h2 data-en="Important notice" data-tr="Önemli bilgilendirme">Important notice</h2><p data-en="GDN Coin is currently in public testnet development. Roadmap items are plans, not guarantees. Digital assets involve technical, market and regulatory risk. Always conduct independent research." data-tr="GDN Coin şu anda halka açık test ağı geliştirme aşamasındadır. Yol haritasındaki maddeler plan niteliğindedir ve garanti değildir. Dijital varlıklar teknik, piyasa ve düzenleyici riskler içerir. Her zaman bağımsız araştırma yapın.">GDN Coin is currently in public testnet development. Roadmap items are plans, not guarantees. Digital assets involve technical, market and regulatory risk. Always conduct independent research.</p></section>
   </main>
 
   <footer>
-    <a class="brand" href="#home">
-      <span class="brand-mark">G</span>
-      <span>GDN <strong>COIN</strong></span>
-    </a>
-    <p>© 2026 GDN Ecosystem. Released under the MIT License.</p>
+    <div class="footer-brand"><a class="brand" href="#home"><span class="brand-mark">G</span><span>GDN <strong>COIN</strong></span></a><p data-en="Transparent Finance. Real Utility. Social Impact." data-tr="Şeffaf Finans. Gerçek Fayda. Sosyal Etki.">Transparent Finance. Real Utility. Social Impact.</p></div>
+    <div class="footer-links"><a href="#about" data-en="About" data-tr="Hakkında">About</a><a href="#tokenomics">Tokenomics</a><a href="#roadmap" data-en="Roadmap" data-tr="Yol Haritası">Roadmap</a><a href="GDN_Coin_Whitepaper_v1.0_Beta.pdf" target="_blank">Whitepaper</a><a href="https://github.com/GDN-Coin/GDN-Coin" target="_blank" rel="noreferrer">GitHub</a></div>
+    <p>© 2026 GDN Ecosystem. MIT License.</p>
   </footer>
 
   <script src="script.js"></script>
