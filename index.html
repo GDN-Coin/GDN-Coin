@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="GDN Coin — Transparent Finance. Real Utility. Social Impact." />
+  <title>GDN Coin | GDN Ecosystem</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="GDN Coin home">
+      <span class="brand-mark">G</span>
+      <span>GDN <strong>COIN</strong></span>
+    </a>
+
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+
+    <nav class="nav">
+      <a href="#about">About</a>
+      <a href="#tokenomics">Tokenomics</a>
+      <a href="#security">Security</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="#links">Links</a>
+    </nav>
+
+    <a class="button button-small button-outline" href="#links">Explore GDN</a>
+  </header>
+
+  <main>
+    <section id="home" class="hero section">
+      <div class="hero-copy">
+        <div class="eyebrow">ETHEREUM ERC-20 • SEPOLIA VERIFIED</div>
+        <h1>Transparent finance.<br><span>Real utility.</span><br>Social impact.</h1>
+        <p>
+          GDN Coin is a fixed-supply ERC-20 token designed for a transparent,
+          secure and socially responsible blockchain ecosystem.
+        </p>
+        <div class="hero-actions">
+          <a class="button" href="#tokenomics">View Tokenomics</a>
+          <a class="button button-ghost" href="#links">Official Links</a>
+        </div>
+        <div class="contract-box">
+          <span>Sepolia Contract</span>
+          <code id="contractAddress">0xe898363d5e8d9d60eca40a468956bdd3b52f4fa6</code>
+          <button id="copyContract" aria-label="Copy contract address">Copy</button>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="coin-ring ring-one"></div>
+        <div class="coin-ring ring-two"></div>
+        <div class="coin">
+          <span class="coin-letter">G</span>
+          <span class="coin-label">GDN</span>
+        </div>
+        <div class="orbit orbit-one"><i></i></div>
+        <div class="orbit orbit-two"><i></i></div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <article><strong>1B</strong><span>Total Supply</span></article>
+      <article><strong>95%</strong><span>Treasury</span></article>
+      <article><strong>5%</strong><span>Charity Reserve</span></article>
+      <article><strong>0%</strong><span>Transfer Tax</span></article>
+    </section>
+
+    <section id="about" class="section split-section">
+      <div>
+        <div class="eyebrow">ABOUT GDN</div>
+        <h2>Built on clarity, not complexity.</h2>
+      </div>
+      <div class="large-copy">
+        <p>
+          GDN Coin was created around a simple principle: blockchain technology
+          should be transparent, useful and capable of supporting measurable
+          positive impact.
+        </p>
+        <p>
+          The complete supply was created once at deployment. No public minting
+          function exists, no transfer tax is applied and the initial allocation
+          is publicly verifiable on-chain.
+        </p>
+      </div>
+    </section>
+
+    <section id="tokenomics" class="section">
+      <div class="section-heading">
+        <div class="eyebrow">TOKENOMICS</div>
+        <h2>A predictable fixed-supply model.</h2>
+        <p>Simple allocation. No hidden deductions. No inflationary minting.</p>
+      </div>
+
+      <div class="tokenomics-grid">
+        <div class="allocation-card">
+          <div class="donut" role="img" aria-label="95 percent treasury, 5 percent charity reserve">
+            <div class="donut-center">
+              <strong>1B</strong>
+              <span>GDN</span>
+            </div>
+          </div>
+          <div class="legend">
+            <div><i class="legend-treasury"></i><span>Treasury</span><strong>950M GDN</strong></div>
+            <div><i class="legend-charity"></i><span>Charity Reserve</span><strong>50M GDN</strong></div>
+          </div>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <span>01</span>
+            <h3>Fixed Supply</h3>
+            <p>The total supply is permanently capped at 1,000,000,000 GDN.</p>
+          </article>
+          <article class="feature-card">
+            <span>02</span>
+            <h3>No Transfer Tax</h3>
+            <p>Sending 100 GDN delivers exactly 100 GDN to the receiver.</p>
+          </article>
+          <article class="feature-card">
+            <span>03</span>
+            <h3>Burnable</h3>
+            <p>Holders may voluntarily and permanently burn their own tokens.</p>
+          </article>
+          <article class="feature-card">
+            <span>04</span>
+            <h3>Emergency Pause</h3>
+            <p>Transfers can be paused by the owner during exceptional incidents.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="security" class="section security-section">
+      <div class="section-heading">
+        <div class="eyebrow">SECURITY</div>
+        <h2>Conservative smart-contract design.</h2>
+      </div>
+      <div class="security-grid">
+        <article>
+          <div class="icon">✓</div>
+          <h3>Open Source</h3>
+          <p>The contract source code is publicly available in the official GitHub repository.</p>
+        </article>
+        <article>
+          <div class="icon">✓</div>
+          <h3>Exact-Match Verification</h3>
+          <p>The Sepolia deployment has been source-code verified on Etherscan.</p>
+        </article>
+        <article>
+          <div class="icon">✓</div>
+          <h3>OpenZeppelin 5.0.2</h3>
+          <p>Core ERC-20, pausable, burnable and ownership components use established libraries.</p>
+        </article>
+        <article>
+          <div class="icon">✓</div>
+          <h3>Two-Step Ownership</h3>
+          <p>Ownable2Step reduces the risk of transferring control to an incorrect address.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="roadmap" class="section">
+      <div class="section-heading">
+        <div class="eyebrow">ROADMAP</div>
+        <h2>From verified testnet to real-world ecosystem.</h2>
+      </div>
+      <div class="timeline">
+        <article class="complete">
+          <span>Phase 01</span>
+          <h3>Foundation</h3>
+          <p>Smart contract, GitHub repository, Sepolia deployment, verification and wallet testing.</p>
+        </article>
+        <article class="active">
+          <span>Phase 02</span>
+          <h3>Brand & Community</h3>
+          <p>Website, whitepaper, visual identity and early community development.</p>
+        </article>
+        <article>
+          <span>Phase 03</span>
+          <h3>Mainnet Preparation</h3>
+          <p>Security review, multisig transition, liquidity planning and launch readiness.</p>
+        </article>
+        <article>
+          <span>Phase 04</span>
+          <h3>Ecosystem Growth</h3>
+          <p>Payments, business partnerships and transparent social-impact initiatives.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="links" class="section link-section">
+      <div>
+        <div class="eyebrow">OFFICIAL RESOURCES</div>
+        <h2>Verify. Explore. Follow the build.</h2>
+      </div>
+      <div class="link-grid">
+        <a href="https://github.com/GDN-Coin/GDN-Coin" target="_blank" rel="noreferrer">
+          <span>GitHub</span><strong>Source Code ↗</strong>
+        </a>
+        <a href="https://sepolia.etherscan.io/address/0xe898363d5e8d9d60eca40a468956bdd3b52f4fa6" target="_blank" rel="noreferrer">
+          <span>Sepolia Etherscan</span><strong>Verified Contract ↗</strong>
+        </a>
+        <a href="GDN_Coin_Whitepaper_v1.0_Beta.pdf" target="_blank">
+          <span>Whitepaper</span><strong>Read PDF ↗</strong>
+        </a>
+      </div>
+    </section>
+
+    <section class="disclaimer section">
+      <h2>Important notice</h2>
+      <p>
+        GDN Coin is currently in public testnet development. Roadmap items are plans,
+        not guarantees. Digital assets involve technical, market and regulatory risk.
+        Always conduct independent research.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand" href="#home">
+      <span class="brand-mark">G</span>
+      <span>GDN <strong>COIN</strong></span>
+    </a>
+    <p>© 2026 GDN Ecosystem. Released under the MIT License.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
