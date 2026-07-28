@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1180 320" role="img" aria-label="GDN Coin">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fff0ad"/><stop offset=".45" stop-color="#d9af55"/><stop offset="1" stop-color="#8a601e"/></linearGradient></defs>
+<image href="gdn-mark.svg" x="0" y="0" width="320" height="320"/>
+<text x="365" y="190" fill="#f4f0e6" font-family="Inter,Arial,sans-serif" font-size="126" font-weight="800" letter-spacing="10">GDN</text>
+<text x="748" y="190" fill="url(#g)" font-family="Inter,Arial,sans-serif" font-size="126" font-weight="800" letter-spacing="10">COIN</text>
+<text x="371" y="250" fill="#aaa69c" font-family="Inter,Arial,sans-serif" font-size="27" font-weight="600" letter-spacing="7">TRANSPARENT • SECURE • RESPONSIBLE</text>
+</svg>
