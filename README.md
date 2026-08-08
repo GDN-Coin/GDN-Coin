@@ -1,113 +1,142 @@
-# GDN Ecosystem
+# ☀️ Gunes Coin
 
-## Transparent Finance. Real Utility. Social Impact.
+## A New Hope Rises.
+
+Gunes Coin is an Ethereum-based ERC-20 token designed to combine transparent blockchain technology, real-world utility, community growth, and measurable social impact.
 
 ---
 
-## About
+## ☀️ About Gunes Coin
 
-GDN Ecosystem is an Ethereum-based blockchain project built to combine transparent finance, real-world utility, and measurable social impact.
+Gunes Coin represents a blockchain ecosystem built around transparency, utility, sustainability, and social responsibility.
 
-Our vision is to create a trusted ecosystem where blockchain technology serves individuals, businesses, and communities.
+Our vision is to create an ecosystem where blockchain technology can generate value while also contributing to communities and charitable initiatives.
 
 ---
 
 ## Vision
 
-We believe blockchain should solve real problems.
+We believe blockchain should create real-world value and meaningful impact.
 
-GDN Ecosystem is designed to support:
+The Gunes Coin ecosystem is designed to support:
 
-- Secure digital payments
-- Business partnerships
+- Secure digital transactions
+- Transparent blockchain infrastructure
 - Community growth
+- Business partnerships
+- Future real-world utility
 - Transparent charitable initiatives
-- Long-term sustainability
+- Long-term ecosystem development
 
 ---
 
 ## Mission
 
-Our mission is to build a transparent ecosystem where technology creates value while contributing to society.
+Our mission is to build a transparent and sustainable blockchain ecosystem where technology, finance, community, and social impact can grow together.
+
+---
+
+## Token Information
+
+| Property | Value |
+|---|---|
+| Token Name | Gunes Coin |
+| Symbol | GUNES |
+| Network | Ethereum |
+| Token Standard | ERC-20 |
+| Total Supply | 1,000,000,000 GUNES |
+| Decimals | 18 |
+| Transfer Tax | 0% |
+| Additional Minting | No |
+
+---
+
+## Token Distribution
+
+The total supply of Gunes Coin is permanently fixed at **1,000,000,000 GUNES**.
+
+- **950,000,000 GUNES (95%)** — Treasury
+- **50,000,000 GUNES (5%)** — Charity Reserve
+
+The smart contract does not contain an additional minting mechanism.
+
+---
+
+## Charity Reserve
+
+5% of the total GUNES supply is allocated to a dedicated charity reserve.
+
+The purpose of this reserve is to support future transparent charitable initiatives as the ecosystem develops.
+
+Gunes Coin does **not** deduct a charity fee from user transfers.
+
+If a user transfers 100 GUNES, the recipient receives 100 GUNES, excluding any external network gas costs.
 
 ---
 
 ## Core Principles
 
 - No hidden transaction taxes
-- Exact transfer amounts
-- Transparency
+- Fixed token supply
+- Transparent charity reserve
+- No additional minting
 - Security
 - Sustainability
-- Community first
+- Community-first development
+- Long-term ecosystem growth
 
 ---
 
-## Token Information
+## Smart Contract
 
-| Item | Value |
-|------|------|
-| Name | GDN Coin |
-| Symbol | GDN |
-| Network | Ethereum |
-| Standard | ERC-20 |
-| Total Supply | 1,000,000,000 GDN |
+The Gunes Coin smart contract is built using Solidity and OpenZeppelin contracts.
 
----
+Key features include:
 
-## Token Allocation
+- ERC-20 compatibility
+- Burnable tokens
+- Emergency pause functionality
+- Two-step ownership transfer
+- Fixed supply
+- No transfer tax
+- Dedicated treasury and charity reserve allocations
 
-| Allocation | Amount |
-|------------|------------:|
-| Treasury | 950,000,000 GDN |
-| Charity Reserve | 50,000,000 GDN |
-
-The charity reserve is allocated during deployment.
-
-No transfer taxes are charged to users.
+The Gunes Coin contract has been deployed and successfully verified on the Ethereum Sepolia Testnet.
 
 ---
 
-## Roadmap
+## Development Status
 
-### Phase 1
+Gunes Coin is currently in the development and testing phase.
 
-- Smart Contract ✔️
-- GitHub Repository ✔️
-- Tokenomics ✔️
+The Sepolia deployment is intended for testing and verification purposes and does not represent the final Ethereum Mainnet deployment.
 
-### Phase 2
-
-- Whitepaper
-- Website
-- Community Building
-- Security Review
-
-### Phase 3
-
-- Mainnet Launch
-- Exchange Listings
-- Partnerships
-- Ecosystem Expansion
+Further testing, security review, ecosystem development, and infrastructure preparation will take place before a potential Mainnet launch.
 
 ---
 
-## Security
+## Official Website
 
-Security and transparency are the foundation of the GDN Ecosystem.
+Gunes Coin ecosystem website:
 
-Future versions will continue improving the project while following OpenZeppelin best practices.
+**gdncoin.io**
+
+---
+
+## Security Notice
+
+Cryptocurrency and blockchain projects involve technical, market, regulatory, and financial risks.
+
+Gunes Coin does not guarantee financial returns or token price appreciation.
+
+Users should conduct their own research and understand the risks associated with blockchain technology and digital assets.
 
 ---
 
 ## License
 
-MIT License
+This project is released under the MIT License.
 
 ---
 
-## Disclaimer
-
-This project is under active development.
-
-Nothing in this repository should be considered financial or investment advice.
+© 2026 Gunes Coin
