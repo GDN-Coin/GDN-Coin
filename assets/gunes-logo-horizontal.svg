@@ -1,4 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 180">
+<rect width="760" height="180" fill="none"/>
+<g transform="translate(18 0) scale(.7)">
 <defs>
   <radialGradient id="disc" cx="38%" cy="30%" r="72%">
     <stop offset="0" stop-color="#fff1a8"/>
@@ -28,4 +30,8 @@
 <!-- Hope spark -->
 <circle cx="128" cy="92" r="8" fill="#fff3b2"/>
 <path d="M128 73v-11M109 79l-8-8M147 79l8-8" stroke="#fff3b2" stroke-width="5" stroke-linecap="round"/>
+</g>
+<text x="220" y="88" fill="#f5f0e6" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="700" letter-spacing="5">GÜNEŞ</text>
+<text x="474" y="88" fill="#f6c453" font-family="Arial, Helvetica, sans-serif" font-size="54" font-weight="700" letter-spacing="5">COIN</text>
+<text x="223" y="124" fill="#bcb6aa" font-family="Arial, Helvetica, sans-serif" font-size="17" letter-spacing="3">A NEW HOPE RISES.</text>
 </svg>
